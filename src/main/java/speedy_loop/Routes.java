@@ -6,13 +6,14 @@ package speedy_loop;
 
 import java.util.Hashtable;
 import java.util.ArrayList;
-import speedy_loop.*;
 
 public class Routes {
   public Hashtable<Town, Edge> routingTable;
 
   public Routes() {
-    this.routingTable = new Hashtable<Town, Edge>();
+
+      this.routingTable = new Hashtable<Town, Edge>();
+
   }
 
   public Hashtable<Town, Edge> getRoutingTable() {
@@ -149,9 +150,7 @@ public class Routes {
         return shortestPath;
   }
 
-    /*
-     * Find number of routes between towns;
-     */
+
   public int numRoutesWithin(Town origin, Town dest, int maxDistance) {
         return findAllRoutesBetweenTowns(origin, dest, 0, maxDistance);
     }
@@ -195,29 +194,6 @@ public class Routes {
 
   }
 
- /*
- * Implementing the extentions
- */
-
-//    public String calculateTotalTimeForRoute(ArrayList<Town>towns) {
-//
-//        int totalTime = 0;
-//        int distance = 0;
-//
-//        try {
-//
-//            distance = findDistanceBetweenTowns(towns);
-//            totalTime= distance + 2 * (towns.size() - 2);
-//
-//        } catch (Exception e){
-//            return e.getMessage();
-////            System.out.println(e.getMessage());
-////            return null;
-//
-//        }
-//
-//        return String.valueOf(totalTime);
-//    }
 
     class NoSuchRouteException extends Exception {
 

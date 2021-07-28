@@ -1,6 +1,5 @@
 /**
-  This is a node representation of a town.
-  It contains a name, a visited flag and 
+  Implementing vertex of the Graph. Name "Town" sounds better for this time around.
 */
 
 package speedy_loop;
@@ -25,16 +24,15 @@ public class Town {
 
 	@Override
 	public boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    }
-
-		if (obj.getClass() != getClass() || obj == null ) {
+		if (obj == this) {
+		  return true;
+		}
+		if (obj.getClass() != getClass()) {
 	        return false;
 	    }
 
 		Town rhsTown = (Town)obj;
-    return this.name.equals(rhsTown.name);
+	    return this.name.equals(rhsTown.name);
 	}
 
 	@Override

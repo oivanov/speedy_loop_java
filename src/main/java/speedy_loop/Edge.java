@@ -1,6 +1,5 @@
 /**
-  edge implementation, contains the start and destination nodes,
-  weight and the next node
+  implementing the Edge of the Graph. everything is public for simplicity
 */
 
 package speedy_loop;
@@ -10,10 +9,6 @@ public class Edge {
 	public Town destination;
 	public int weight;
 	public Edge next;
-
-  public Edge (Town origin, Town destination){
-    this(origin, destination, Integer.MAX_VALUE);
-  }
 
 	public Edge(Town origin, Town destination, int weight) {
 		this.origin 		= origin;
@@ -27,10 +22,17 @@ public class Edge {
 		return this;
 	}
 
-  public double getWeight() {
-    return weight;
-  }
+//	@Override
+//	public String toString() {
+//		return "Edge{" +
+//				"origin=" + origin +
+//				", destination=" + destination +
+//				", weight=" + weight +
+//				", next=" + next +
+//				'}';
+//	}
 
+// this format is easier for debugging
   public String toString() {
     return origin + "to" + destination;
   }
