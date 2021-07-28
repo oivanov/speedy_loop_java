@@ -74,7 +74,7 @@ public class Routes {
                     continue;
                 }
                 else if(!edge.destination.visited) {
-                    //depth--;
+
                     routes += findRoutes(edge.destination, dest, depth, limit);
 
                 }
@@ -94,7 +94,6 @@ public class Routes {
         if(this.routingTable.containsKey(origin) && this.routingTable.containsKey(dest)) {
             if(depth == limit){ return 0;}
             depth++;
-            //origin.visited = true;
 
             Edge edge = this.routingTable.get(origin);
             while(edge != null) {
@@ -103,11 +102,7 @@ public class Routes {
                     edge = edge.next;
                     continue;
                 } else {
-                //else if(!edge.destination.visited) {
-
-                    //depth--;
                     routes += findRoutesExactStopCount(edge.destination, dest, depth, limit);
-
                 }
                 edge = edge.next;
             }
@@ -116,7 +111,6 @@ public class Routes {
             noRouteException();
         }
 
-        //origin.visited = false;
         return routes;
     }
 
